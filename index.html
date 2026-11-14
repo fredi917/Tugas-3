@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Gaji 3D Glassmorphism</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <figure class="bg-animation-container">
+        <span class="bg-blob blob-1"></span>
+        <span class="bg-blob blob-2"></span>
+        <span class="bg-blob blob-3"></span>
+    </figure>
+
+    <main class="glass-card" id="glassCard">
+        <span class="card-glow" id="cardGlow"></span>
+
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+
+        <div class="card-content">
+            <header class="card-header">
+                <h1>Tugas 3 Algoritma Dan Pemrograman</h1>
+            </header>
+
+            <section class="card-body">
+                <form id="salaryForm" onsubmit="event.preventDefault(); hitungGaji();">
+                    <section class="input-group">
+                        <label for="golongan">Golongan Karyawan:</label>
+                        <select id="golongan" class="input-golongan" required>
+                            <option value="" disabled selected>-- Pilih Golongan --</option>
+                            <option value="A">Golongan A (Rp 5.000.000)</option>
+                            <option value="B">Golongan B (Rp 6.500.000)</option>
+                            <option value="C">Golongan C (Rp 9.500.000)</option>
+                        </select>
+                    </section>
+
+                    <section class="input-group">
+                        <label for="jamLembur">Jam Lembur:</label>
+                        <input type="number" id="jamLembur" class="input-lembur" min="0" placeholder="Masukkan total jam lembur (contoh: 3)" required>
+                    </section>
+
+                    <button type="submit" class="btn-action">Hitung Total Gaji</button>
+                </form>
+
+                <section id="resultSection" class="result-section">
+                    <h2>Rincian Perhitungan Gaji</h2>
+                    <p class="result-row"><span>Golongan:</span><strong id="resGolongan">-</strong></p>
+                    <p class="result-row"><span>Gaji Pokok:</span><strong id="resGajiPokok">-</strong></p>
+                    <p class="result-row"><span>Jam Lembur:</span><strong id="resJamLembur">-</strong></p>
+                    <p class="result-row"><span>Persentase Lembur:</span><strong id="resPersenLembur">-</strong></p>
+                    <p class="result-row"><span>Nominal Lembur:</span><strong id="resNominalLembur">-</strong></p>
+                    <p class="result-row total"><span>Total Pendapatan:</span><strong id="resTotalGaji">-</strong></p>
+                    
+                    <button type="button" class="btn-reset" onclick="resetTampilan()">Kembali ke Tampilan Semua</button>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
